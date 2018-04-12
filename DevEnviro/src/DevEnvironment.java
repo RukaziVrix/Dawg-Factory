@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -14,11 +15,16 @@ public class DevEnvironment {
 		
 		//http://stackoverflow.com/questions/5226212/how-to-open-the-default-webbrowser-using-java
 		//opens the page with the default browser
-		app.executeCommand("rundll32 url.dll,FileProtocolHandler \"C:\\Users\\Mason\\eclipse-workspace\\DevEnviro\\src\\HTMLOutput.html\"", false); 
+		String htmlPath = new File("src/HTMLOutput.html")
+                .getAbsolutePath();
+		app.executeCommand("rundll32 url.dll,FileProtocolHandler \"" + htmlPath, false); 
 		
 		//Compile a java application
-		app.executeCommand("\"C:\\Program Files\\Java\\jdk1.8.0_121\\bin\\javac.exe\" -d \"C:\\Users\\Mason\\eclipse-workspace\\DevEnviro\\classes\" \"C:\\Users\\Mason\\eclipse-workspace\\DevEnviro\\src\\SimpleConsoleApp.java\"", true);
-		app.executeCommand("\"C:\\Program Files\\Java\\jdk1.8.0_121\\bin\\java\" -classpath \"C:\\Users\\Mason\\eclipse-workspace\\DevEnviro\\classes\" SimpleConsoleApp", true);
+		String consoleAppPath = new File("src/SimpleConsoleApp.java")
+                .getAbsolutePath();
+		app.executeCommand("C:\\Program Files\\Java\\jdk1.8.0_161\\bin\\javac.exe" 
+                + consoleAppPath, true);
+//		app.executeCommand("\"C:\\Program Files\\Java\\jdk1.8.0_161\\bin\\java\" -classpath \"C:\\Users\\Mason\\eclipse-workspace\\DevEnviro\\classes\" SimpleConsoleApp", true);
 		
 		System.out.println("Main done");
 	}
