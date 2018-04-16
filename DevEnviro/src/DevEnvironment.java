@@ -10,8 +10,6 @@ public class DevEnvironment {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Main starting");
 		DevEnvironment app = new DevEnvironment();
-		Path path;
-		path = Paths.get(".");
 		
 		//app.executeCommand("notepad.exe", false);
 		
@@ -19,15 +17,12 @@ public class DevEnvironment {
 		
 		//http://stackoverflow.com/questions/5226212/how-to-open-the-default-webbrowser-using-java
 		//opens the page with the default browser
-<<<<<<< HEAD
 		app.executeCommand("rundll32 url.dll,FileProtocolHandler \"..\\HTMLOutput.html\"", false);
 
-=======
 		String htmlPath = new File("src/HTMLOutput.html")
                 .getAbsolutePath();
 		app.executeCommand("rundll32 url.dll,FileProtocolHandler \"" + htmlPath, false); 
 		
->>>>>>> 1890054379bc6d40340be9e6658f002210e5dabf
 		//Compile a java application
 		String consoleAppPath = new File("src/SimpleConsoleApp.java")
                 .getAbsolutePath();
@@ -39,7 +34,6 @@ public class DevEnvironment {
 	}
 
 	private void executeCommand(String command, boolean wait) throws Exception {
-		//Source: http://stackoverflow.com/questions/4842684/how-to-compile-run-java-program-in-another-java-program
 		System.out.println(command);
 		Process pro = Runtime.getRuntime().exec(command);
 		if (wait)
@@ -58,5 +52,4 @@ public class DevEnvironment {
 			System.out.println(name + " " + line);
 		}
 	}
-
 }
