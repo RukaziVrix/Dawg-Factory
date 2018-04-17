@@ -13,7 +13,6 @@ public class DevEnvironment {
     }
 
     public static String executeCommand(String command, boolean wait) throws Exception {
-        //Source: http://stackoverflow.com/questions/4842684/how-to-compile-run-java-program-in-another-java-program
         System.out.println(command);
         Process pro = Runtime.getRuntime().exec(command);
         String result = "";

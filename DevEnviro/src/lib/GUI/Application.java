@@ -31,7 +31,6 @@ public class Application extends JFrame {
     public Application(AbstractLanguageElementFactory factory) {
         languageFactory = factory;
 
-        // default to the first language in the factory
         String defaultLanguage = factory.getLanguages()[0];
         elementFactory = languageFactory.create(defaultLanguage);
     }
@@ -92,7 +91,7 @@ public class Application extends JFrame {
 
         setSize(600, 600);
         setLocationRelativeTo(null);
-        setTitle("GUI for DawgFactory");
+        setTitle("GUI for DawgFactory by Alfonso & Esteban & Mason");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }

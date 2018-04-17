@@ -113,7 +113,6 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
             }
         }
 
-        // clear out any remaining elements in selection since we didn't hit them
         if (!didClickElements) {
             m_selection.clear();
         }
@@ -133,7 +132,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
 
         if (checkSelection(e.getPoint(), false)) {
             if (e.getClickCount() == 2) {
-                Color c = JColorChooser.showDialog(this, "Choose Color", Color.RED);
+                Color c = JColorChooser.showDialog(this, "Choose Color", Color.GREEN);
                 getSelection().setColor(c);
             }
         }

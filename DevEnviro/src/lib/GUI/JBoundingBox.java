@@ -34,10 +34,8 @@ public class JBoundingBox extends Rectangle {
 
     protected Rectangle[] createResizeHandles() {
         Rectangle r = m_element.getBounds();
-        // size of handle
         final int size = 10;
 
-        // offset to account for handle
         r.x -= (size / 2);
         r.y -= (size / 2);
 
